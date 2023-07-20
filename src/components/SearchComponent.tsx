@@ -1,7 +1,14 @@
-import React from "react";
+import React, { FC, FormEvent } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 
-const SearchComponent = ({ value, onChange, onSubmit, error }) => {
+interface Props {
+  value: string;
+  onChange: (inputValue: string) => void;
+  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  error: string;
+}
+
+const SearchComponent: FC<Props> = ({ value, onChange, onSubmit, error }) => {
   return (
     <div>
       <form
