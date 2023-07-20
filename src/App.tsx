@@ -8,6 +8,7 @@ import UserInfo from "./components/UserInfo";
 import Spinner from "react-spinkit";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
@@ -45,7 +46,7 @@ function App() {
       console.log("Error", err);
     }
   };
-  // return null
+
   return (
     <div className="w-screen h-screen bg-yellow-100 flex flex-col justify-center items-center gap-y-5 bg-gradient-to-r from-purple-800 via-indigo-600 to-green-600">
       <img
