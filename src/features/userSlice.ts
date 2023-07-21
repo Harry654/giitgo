@@ -1,29 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface User {
-  id: number;
-  name: string;
-  avatar_url: string;
-  bio: string;
-  html_url: string;
-  login: string;
-  email: string;
-  repos_url: string;
-  // ... other properties
+  [key: string]: string | undefined;
 }
-// Define the initial state
-export const userInitialState = {
-  id: 0,
-  name: "",
-  avatar_url: "",
-  bio: "",
-  html_url: "",
-  login: "",
-  email: "",
-  repos_url: "",
-  // ... other initial properties
-};
-const initialState: User = userInitialState;
+const initialState: User = {};
 
 // Create the cake slice
 const userSlice = createSlice({
