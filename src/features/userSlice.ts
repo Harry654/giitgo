@@ -6,6 +6,9 @@ interface User {
   avatar_url: string;
   bio: string;
   html_url: string;
+  login: string;
+  email: string;
+  repos_url: string;
   // ... other properties
 }
 // Define the initial state
@@ -14,7 +17,10 @@ export const userInitialState = {
   name: "",
   avatar_url: "",
   bio: "",
-  html_url: ""
+  html_url: "",
+  login: "",
+  email: "",
+  repos_url: "",
   // ... other initial properties
 };
 const initialState: User = userInitialState;
