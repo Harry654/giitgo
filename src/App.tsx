@@ -8,6 +8,7 @@ import UserInfo from "./components/UserInfo";
 import Spinner from "react-spinkit";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
