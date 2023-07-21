@@ -49,7 +49,7 @@ function App() {
   };
 
   return (
-    <div className="w-screen h-screen bg-yellow-100 flex flex-col justify-center items-center gap-y-5 bg-gradient-to-r from-purple-800 via-indigo-600 to-green-600">
+    <div className="w-screen h-screen bg-yellow-100 flex flex-col justify-center items-center gap-y-5 bg-gradient-to-br from-blue-900 via-black to-blue-700">
       <img
         src={githubLogo}
         alt="github-logo"

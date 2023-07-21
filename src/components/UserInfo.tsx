@@ -11,7 +11,7 @@ function UserInfo() {
 
   return (
     <div className="w-96 flex items-center justify-center ">
-      <div className="backdrop-blur-lg bg-purple-500 bg-opacity-50 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg">
+      <div className="bg-gradient-to-r from-purple-800 via-indigo-600 to-green-600 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg">
         <div className="flex items-center">
           <Popup
             trigger={
@@ -28,21 +28,32 @@ function UserInfo() {
               borderRadius: 20,
               backgroundColor: "#18181a",
               border: "none",
+              overflow: "scroll",
             }}
           >
-            <div className="text-center p-4 flex flex-col items-center justify-center">
-              <img
-                src={user.avatar_url}
-                alt="Profile"
-                className="w-48 h-48 rounded-full"
-              />
-              <p className="mt-4 text-white">{user.name ? user.name : user.login}</p>
-              <hr className="w-full border border-gray-100 my-4" />
+            <div className="gap-10 text-center p-4 flex flex-col justify-center">
+              <div className="w-full flex items-center gap-10">
+                <img
+                  src={user.avatar_url}
+                  alt="Profile"
+                  className="w-48 h-48 rounded-full"
+                />
+                <div className="flex flex-col items-start w-1/2">
+                <p className="mt-4 text-white text-3xl">
+                  {user.name ? user.name : user.login}
+                </p>
+                {
+                  user.bio &&
+                  <p className="text-gray-500 text-left">{user.bio}</p>
+                }
+                </div>
+                {/* <hr className="w-full border border-gray-100 my-4" /> */}
+              </div>
 
               <AllRepos />
             </div>
           </Popup>
-          
+
           <div className="ml-4">
             <h2 className="text-xl font-semibold text-white">
               {user.name ? user.name : user.login}
