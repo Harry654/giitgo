@@ -7,7 +7,7 @@ import "reactjs-popup/dist/index.css";
 function UserInfo() {
   const user = useSelector((state: RootState) => state.user);
   if (!user.id) return null;
-  const profilePictureUrl = "https://via.placeholder.com/200";
+  
   return (
     <div className="w-96 flex items-center justify-center ">
       <div className="backdrop-blur-lg bg-purple-500 bg-opacity-50 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg">
@@ -49,12 +49,6 @@ function UserInfo() {
           </a>
         </div>
       </div>
-    </div>
-  );
-  return (
-    <div>
-      <p>{user.name}</p>
-      <img src={user.avatar_url} className="w-10 h-10" alt="user avatar" />
     </div>
   );
 }
