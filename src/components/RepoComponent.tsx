@@ -1,6 +1,8 @@
 import React, { FC } from "react";
-import { AiOutlineLink, AiFillEye } from "react-icons/ai";
+import { AiOutlineLink, AiFillEye, AiOutlineFieldTime } from "react-icons/ai";
 import { User } from "../features/userSlice";
+import formatDate from "../helpers/formatDate";
+
 interface Props {
   repo: {
     owner: User;
@@ -8,7 +10,7 @@ interface Props {
 }
 const RepoComponent: FC<Props> = ({ repo }) => {
   return (
-    <div className="bg-gradient-to-br from-red-900 to-blue-900 rounded-lg shadow-lg p-4 max-w-sm">
+    <div className="bg-gradient-to-l from-blue-900 rounded-lg shadow-lg p-4 max-w-sm">
       <a
         href={repo.html_url}
         target="blank"
@@ -26,6 +28,12 @@ const RepoComponent: FC<Props> = ({ repo }) => {
         />
         <p className="text-gray-600">Owner: {repo.owner.login}</p>
       </div>
+
+      <div className="flex justify-start items-center gap-2 my-3">
+        <AiOutlineFieldTime size={20} color="#fff" />
+        <p className="text-gray-600 text-left">{formatDate(repo.created_at)}</p>
+      </div>
+
       <div className="flex items-center mt-2 gap-2">
         {"✨"}
         <p className="text-gray-600">{repo.stargazers_count} Stars</p>

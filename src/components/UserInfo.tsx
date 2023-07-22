@@ -23,15 +23,23 @@ function UserInfo() {
             }
             modal
             contentStyle={{
-              width: 1000,
+              width: "90%",
               height: 600,
               borderRadius: 20,
-              backgroundColor: "#18181a",
+              backgroundColor: "transparent",
+              // background: "linear-gradient(to top left, #18181a 65%, rgba(0, 255, 0, .2)",
               border: "none",
               overflow: "scroll",
+              padding: 0,
             }}
           >
-            <div className="gap-10 text-center p-4 flex flex-col justify-center">
+            <div
+              className="gap-10 text-center p-4 flex flex-col justify-center"
+              style={{
+                background:
+                  "linear-gradient(to top left, #18181a 60%, rgb(0, 50, 0), transparent",
+              }}
+            >
               <div className="w-full flex items-center gap-10">
                 <img
                   src={user.avatar_url}
@@ -39,13 +47,12 @@ function UserInfo() {
                   className="w-48 h-48 rounded-full"
                 />
                 <div className="flex flex-col items-start w-1/2">
-                <p className="mt-4 text-white text-3xl">
-                  {user.name ? user.name : user.login}
-                </p>
-                {
-                  user.bio &&
-                  <p className="text-gray-500 text-left">{user.bio}</p>
-                }
+                  <p className="mt-4 text-white text-3xl">
+                    {user.name ? user.name : user.login}
+                  </p>
+                  {user.bio && (
+                    <p className="text-gray-500 text-left">{user.bio}</p>
+                  )}
                 </div>
                 {/* <hr className="w-full border border-gray-100 my-4" /> */}
               </div>

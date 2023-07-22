@@ -27,7 +27,7 @@ function AllRepos() {
 
     // eslint-disable-next-line
   }, [user]);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-white">Loading repositories...</p>;
   return (
     <div>
       <h1 className="text-white mb-5 mr-auto border rounded-lg w-36">{`${repos.length} repositories`}</h1>
