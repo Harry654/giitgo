@@ -10,16 +10,35 @@ function UserInfo() {
   if (!user.id) return null;
 
   return (
-    <div className="w-96 flex items-center justify-center ">
-      <div className="bg-gradient-to-r from-purple-800 via-indigo-600 to-green-600 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg">
-        <div className="flex items-center">
           <Popup
             trigger={
+    <div className="w-96 flex items-center justify-center cursor-pointer">
+      <div className="bg-gradient-to-r from-purple-800 via-indigo-600 to-green-600 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-lg">
+        <div className="flex items-center">
               <img
                 src={user.avatar_url}
                 alt="Profile"
-                className="cursor-pointer w-16 h-16 rounded-full"
+                className="w-16 h-16 rounded-full"
               />
+                  <div className="ml-4">
+            <h2 className="text-xl font-semibold text-white">
+              {user.name ? user.name : user.login}
+            </h2>
+          </div>
+        </div>
+        <div className="mt-4">
+          <p className="text-white">{user.bio}</p>
+        </div>
+        <div className="mt-6">
+          <a
+            href={user.html_url}
+            className="text-white font-semibold hover:underline"
+          >
+            Visit Profile
+          </a>
+        </div>
+      </div>
+    </div>
             }
             modal
             contentStyle={{
@@ -60,26 +79,8 @@ function UserInfo() {
               <AllRepos />
             </div>
           </Popup>
+      
 
-          <div className="ml-4">
-            <h2 className="text-xl font-semibold text-white">
-              {user.name ? user.name : user.login}
-            </h2>
-          </div>
-        </div>
-        <div className="mt-4">
-          <p className="text-white">{user.bio}</p>
-        </div>
-        <div className="mt-6">
-          <a
-            href={user.html_url}
-            className="text-white font-semibold hover:underline"
-          >
-            Visit Profile
-          </a>
-        </div>
-      </div>
-    </div>
   );
 }
 
