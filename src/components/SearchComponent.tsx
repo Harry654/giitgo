@@ -26,7 +26,7 @@ const SearchComponent: FC<Props> = ({ value, onChange, onSubmit, error }) => {
           <AiOutlineSearch size={20} color="#fff" />
         </button>
       </form>
-      {error && <p className="text-red text-sm">{error}</p>}
+      {error && <p className="text-white text-sm">{error}</p>}
     </div>
   );
 };
